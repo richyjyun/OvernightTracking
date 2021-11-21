@@ -1,7 +1,7 @@
 clear; close all;
 
 fname = 'ExampleRecording';
-path = 'C:\Users\Richy Yun\Dropbox\Fetz Lab\Brain States\Videos';
+path = 'C:\Videos';
 
 depthDevice = imaq.VideoDevice('kinect',2);
 depthDevice();
@@ -26,7 +26,7 @@ fig = figure; axis off; title('Close figure to end');
 while ishghandle(fig)
     
     if true %(t > 0.1) % set this if we want to lower framerate
-        tic; % Reset timing
+        tic; 
         
         ftime = clock; ftime(end) = ftime(end)*1000;
         
@@ -70,6 +70,7 @@ while ishghandle(fig)
             end
         end
         
+        %% Negative changes
         negchange = blur-preframe;
         changebin = imbinarize(negchange,0.01);
         props = regionprops(changebin);
@@ -94,7 +95,7 @@ while ishghandle(fig)
             end
         end
         
-        % Write to binary file. Save as float?
+        % Write to binary file
         fwrite(FID,[ftime(2:end),poscentroid,negcentroid,posweight,negweight],'int32');
         
         % Set previous frame to current frame
