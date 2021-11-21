@@ -56,7 +56,7 @@ try:
         # Difference between frames
         diff = lastframe.astype(int)-frame.astype(int)
         
-        ''' Positive difference (moved towards) '''
+        ''' Positive difference (moved towards camera) '''
         posdiff = np.copy(diff)        
         posdiff[posdiff<thresh] = 0
         posdiff[posdiff>=thresh] = 255
@@ -81,7 +81,7 @@ try:
         posWeight = sum(weights)
         posDist = np.mean([np.mean(frame[labels==x]) for x in inds])
 
-        ''' Negative difference (moved away from) '''
+        ''' Negative difference (moved away from camera) '''
         negdiff = np.copy(diff)        
         negdiff[negdiff>-thresh] = 0
         negdiff[negdiff<=-thresh] = 255
@@ -122,6 +122,7 @@ except KeyboardInterrupt:
 kinect.close()
 file.close()
 
+''' Ending program '''
 print('Done')
 endtime = datetime.now()
 print(endtime)
