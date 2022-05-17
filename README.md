@@ -2,6 +2,8 @@
 
 Tracking non-human primate movements through a 24-hour period using an XBox one Kinect. Both Python and MATLAB versions are included, but the project mainly used the Python scripts. Due to constraints on recording video in the primate center, movements were collected via changes in depth using the IR camera. 
 
+One disadvantage of this method is its inability to track rotations. However, its similarity to the accelerometer data from the Neurochip3 mounted on the animal's head showed the animal rarely engages in perfectly rotational movement.
+
 ## Analyses Performed
 For each frame:
 - Apply a gaussian blur to remove noise.
@@ -10,4 +12,3 @@ For each frame:
 - Find the centroid, raw sum, and average change of both the positive and negative regions.
 - Save the above values as well as the current time into a binary file.
 - Load data and plot the changes over time.
-- One disadvantage of this method is its inability to track rotations. However, its similarity to the accelerometer data from the Neurochip3 mounted on the animal's head showed the animal rarely engages in perfectly rotational movement. 
