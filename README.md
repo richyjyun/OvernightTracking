@@ -12,3 +12,9 @@ For each frame:
 - Find the centroid, raw sum, and average change of both the positive and negative regions.
 - Save the above values as well as the current time into a binary file.
 - Load data and plot the changes over time.
+
+Example of calculating the differences on a hand wave:
+
+<p align="center">
+  <img width="1321" height="870 src="https://github.com/richyyun/OvernightTracking/blob/main/TrackingExample.png">
+</p>
