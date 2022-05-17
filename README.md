@@ -15,8 +15,5 @@ For each frame:
 
 Example of calculating the differences on a hand wave:
 
-<p align="center">
-  <img width="1321" height="870 src="https://github.com/richyyun/OvernightTracking/blob/main/TrackingExample.png">
-</p>
 
                                                                                                                  
